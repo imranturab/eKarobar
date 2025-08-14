@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Base Styles */
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 font-sans text-gray-900 min-h-screen antialiased;
+  }
+}
+
+/* ✅ Custom Components */
+@layer components {
+  .form-box {
+    @apply max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg mt-10;
+  }
+
+  input {
+    @apply w-full p-3 mb-4 bg-gray-50 border border-indigo-200 rounded-lg shadow-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition duration-200;
+  }
+
+  button {
+    @apply px-5 py-2 rounded-lg font-medium shadow-md text-white transition-all duration-300 ease-in-out;
+  }
+
+  button:hover {
+    @apply transform scale-105;
+  }
+
+  button:active {
+    @apply scale-95;
+  }
+
+  button.edit-button {
+    @apply bg-green-600 hover:bg-green-700 focus:ring-2 focus:ring-green-400;
+  }
+
+  button.clear-button {
+    @apply bg-gray-500 hover:bg-gray-600 focus:ring-2 focus:ring-gray-400;
+  }
+
+  button.search-button {
+    @apply ml-3 bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-400;
+  }
+
+  button.show-products {
+    @apply block mx-auto mb-6 bg-pink-500 hover:bg-pink-600 focus:ring-2 focus:ring-pink-400;
+  }
+
+  .error-message {
+    @apply text-red-700 bg-red-100 p-3 rounded-lg mb-4 text-center font-semibold shadow-sm;
+  }
+
+  table {
+    @apply w-full border-collapse bg-white rounded-lg shadow-md overflow-hidden;
+  }
+
+  th, td {
+    @apply p-3 text-left border-b border-gray-200;
+  }
+
+  th {
+    @apply bg-gradient-to-r from-indigo-200 to-pink-200 text-indigo-900 font-semibold;
+  }
+
+  tr:hover {
+    @apply bg-indigo-50 transition-colors duration-200;
+  }
+
+  td button {
+    @apply px-3 py-1 rounded-md text-sm font-semibold shadow-sm;
+  }
+
+  td button:first-child {
+    @apply bg-yellow-500 hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-400;
+  }
+
+  td button:last-child {
+    @apply bg-red-500 hover:bg-red-600 focus:ring-2 focus:ring-red-400;
+  }
+
+  .search-section {
+    @apply flex items-center mb-6;
+  }
+
+  .search-section label {
+    @apply mr-3 text-lg font-medium text-indigo-700;
+  }
+
+  /* ✅ Mobile Responsive */
+  @media (max-width: 640px) {
+    input, button {
+      @apply w-full mb-2;
+    }
+
+    button.search-button {
+      @apply ml-0 mt-2;
+    }
+
+    .search-section {
+      @apply flex-col;
+    }
+
+    table {
+      @apply text-sm;
+    }
+
+    th, td {
+      @apply p-2;
+    }
+  }
+}
