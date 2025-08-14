@@ -165,10 +165,10 @@ export default function App() {
   };
 
   // ✅ Clear search
-  const clearSearch = () => {
-    setSearch("");
-    loadData();
-  };
+  // const clearSearch = () => {
+  //   setSearch("");
+  //   loadData();
+  // };
 
   useEffect(() => {
     loadData();
